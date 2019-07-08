@@ -1,0 +1,12 @@
+{
+  "name": "inst-tinymce-locales",
+  "version": "0.1.0",
+  "description": "Handles TinyMCE locales and locale mappings.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spencerolson/inst-tinymce-locales.git"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": ["inst", "instructure", "tinmyce", "locales"]
+}
