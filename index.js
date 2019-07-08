@@ -1,4 +1,4 @@
-import locales from 'lib/locales'
+const locales = require('lib/locales')
 
 const tinyMCELocales = {
   es: 'es'
