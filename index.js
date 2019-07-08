@@ -1,6 +1,6 @@
 const locales = require('./lib/locales/index')
 
-const defaultLocaleMappings = {
+const defaultLanguageCodeMapings = {
   ar: 'ar_SA',
   da: 'da',
   de: 'de',
@@ -22,8 +22,9 @@ const defaultLocaleMappings = {
   zh_HK: 'zh_TW',
 }
 
-exports.fetchLocale = (originLocale, customLocaleMappings) => {
-  const mappings = { ...defaultLocaleMappings, ...customLocaleMappings }
-  const locale = mappings[originLocale]
-  return locale && locales[locale]
+exports.fetchTranslations = (languageCode, customLanguageCodeMappings) => {
+  const mappings = { ...defaultLanguageCodeMapings, ...customLanguageCodeMappings }
+  const tinyMCELanguageCode = mappings[languageCode]
+  const content = tinyMCELanguageCode && locales[tinyMCELanguageCode]
+  return tinyMCELanguageCode && content && { languageCode: tinyMCELanguageCode, content }
 }
