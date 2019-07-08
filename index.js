@@ -1,38 +1,29 @@
 const locales = require('./lib/locales/index')
 
-const tinyMCELocales = {
-  es: 'es'
+const defaultLocaleMappings = {
+  ar: 'ar_SA',
+  da: 'da',
+  de: 'de',
+  'en-au-x-unimelb': 'en_GB',
+  en_AU: 'en_GB',
+  en_GB: 'en_GB',
+  es: 'es',
+  fr: 'fr_FR',
+  fr_CA: 'fr_FR',
+  ja: 'ja',
+  mi: undefined, // no tinymce translations yet, will use english
+  nb: 'nb_NO',
+  nl: 'nl',
+  pl: 'pl',
+  pt: 'pt_PT',
+  pt_BR: 'pt_BR',
+  ru: 'ru',
+  zh: 'zh_CN',
+  zh_HK: 'zh_TW',
 }
 
-const instLocales = [
-  'en',
-  'en-au-x-unimelb',
-  'zh_HK',
-  'nb',
-  'en_GB',
-  'mi',
-  'es',
-  'da',
-  'pt',
-  'de',
-  'en_AU',
-  'pl',
-  'sv',
-  'fr_CA',
-  'ja',
-  'pt_BR',
-  'ru',
-  'fr',
-  'ar',
-  'nl',
-  'zh',
-]
-
-exports.fetchLocale = (originLocale) => {
-  const locale = tinyMCELocales[originLocale]
-  if (!locale) {
-    return locales.en
-  }
-
-  return locales[locale]
+exports.fetchLocale = (originLocale, customLocaleMappings) => {
+  const mappings = { ...defaultLocaleMappings, ...customLocaleMappings }
+  const locale = mappings[originLocale]
+  return locale && locales[locale]
 }
