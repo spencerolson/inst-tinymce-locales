@@ -1,6 +1,6 @@
 {
   "name": "inst-tinymce-locales",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Handles TinyMCE locales and locale mappings.",
   "repository": {
     "type": "git",
