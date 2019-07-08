@@ -1,4 +1,4 @@
-const locales = require('lib/locales')
+const locales = require('./lib/locales/index')
 
 const tinyMCELocales = {
   es: 'es'
